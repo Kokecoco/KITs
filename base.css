@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+:root {
+    --color-primary: #3c3c6c;
+    --color-text-black: #333;
+    --color-text-white: #ffffff;
+    --color-background: #efefef;
+}
+
+body {
+    font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #efefef;
+}
+
+main {
+    background-color: #ffffff;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 1.0);
+    border-radius: 0.5rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.border {
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: rgb(229, 231, 235);
+}
+
+.text-input {
+    border-radius: 0.25rem;
+    border-width: 1px;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 100%;
+    font-family: inherit;
+    line-height: inherit;
+    margin: 0px;
+}
+
+.button {
+    padding: 0.5rem;
+
+    width: 2.5rem;
+    height: 2.5rem;
+    
+    border-radius: 0.25rem;
+
+    background-color: #3c3c6c;
+    color: #ffffff;
+
+    font-family: inherit;
+    line-height: inherit;
+    font-size: 100%;
+
+    box-shadow: none;
+}
+
+.submit {
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    width: 100%;
+
+    border-radius: 0.25rem;
+
+    background-color: #3c3c6c;
+    color: #ffffff;
+
+    font-family: inherit;
+    line-height: inherit;
+    font-size: 100%;
+
+    box-shadow: none;
+
+}
+
