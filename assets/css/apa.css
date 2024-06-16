@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+
+.default-label {
+    margin-bottom: 0.5rem;
+
+    font-weight: 700;
+    display: block;
+
+}
+
+.column {
+    margin-bottom: 1rem;
+}
+
+.date {
+    border-radius: 0.25rem;
+    border-width: 1px;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.date-input {
+    border-radius: 0.25rem;
+    border-width: 1px;
+    width: 30%;
+    padding: 0.5rem;
+    font-family: inherit;
+    line-height: inherit;
+    margin: 0px;
+}
+
+.date-label {
+    margin-bottom: 0.5rem;
+
+    font-weight: 700;
+
+}
