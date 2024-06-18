@@ -1,25 +1,28 @@
-document.getElementById('divideButton').addEventListener('click', function() {
-    var names = document.getElementById('names').value.split(',');
-    var numGroups = document.getElementById('numGroups').value;
+document.getElementById("divideButton").addEventListener("click", function () {
+    var names = document.getElementById("names").value.split(",");
+    var numGroups = document.getElementById("numGroups").value;
     var result = divideIntoGroups(names, numGroups);
-    document.getElementById('result').innerHTML = result;
-    localStorage.setItem('names', document.getElementById('names').value);
-    localStorage.setItem('numGroups', document.getElementById('numGroups').value);
-    localStorage.setItem('result', result);
+    document.getElementById("result").innerHTML = result;
+    localStorage.setItem("names", document.getElementById("names").value);
+    localStorage.setItem(
+        "numGroups",
+        document.getElementById("numGroups").value
+    );
+    localStorage.setItem("result", result);
 });
-window.onload = function() {
-    var result = localStorage.getItem('result');
-    var names = localStorage.getItem('names');
-    var numGroups = localStorage.getItem('numGroups');
+window.onload = function () {
+    var result = localStorage.getItem("result");
+    var names = localStorage.getItem("names");
+    var numGroups = localStorage.getItem("numGroups");
     // ページの再読み込み時に名前とグループ数も復元
     if (result) {
-        document.getElementById('result').innerHTML = result;
+        document.getElementById("result").innerHTML = result;
     }
     if (names) {
-        document.getElementById('names').value = names;
+        document.getElementById("names").value = names;
     }
     if (numGroups) {
-        document.getElementById('numGroups').value = numGroups;
+        document.getElementById("numGroups").value = numGroups;
     }
 };
 function divideIntoGroups(names, numGroups) {
@@ -34,9 +37,9 @@ function divideIntoGroups(names, numGroups) {
         }
         groups[groupIndex].push(names[i]);
     }
-    var result = '';
+    var result = "";
     for (var i = 0; i < groups.length; i++) {
-        result += 'グループ ' + (i+1) + ': ' + groups[i].join(', ') + '<br>';
+        result += "グループ " + (i + 1) + ": " + groups[i].join(", ") + "<br>";
     }
     return result;
 }
@@ -50,7 +53,14 @@ function shuffleArray(array) {
     }
 }
 
-
-
-
 // divideIntoGroups関数とshuffleArray関数は以前と同じです。
+
+document
+    .getElementById("autofillButton")
+    .addEventListener("click", function () {
+        const numOfPeople = parseInt(
+            document.getElementById("numberOfPeople").value
+        );
+        People = Array.from({ length: numOfPeople }, (v, i) => i + 1);
+        document.getElementById("names").value = People.join(",");
+    });
