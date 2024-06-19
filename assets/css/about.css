@@ -33,11 +33,6 @@ section {
 }
 
 footer {
-    background-color: #3c3c6c;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
     position: fixed;
     bottom: 0;
-    width: 100%;
 }
