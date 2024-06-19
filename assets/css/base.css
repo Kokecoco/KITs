@@ -7,6 +7,11 @@
     --color-background: #efefef;
 }
 
+a.black {
+    color: #000;
+    text-decoration: none;
+}
+
 body {
     font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans",
         "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;

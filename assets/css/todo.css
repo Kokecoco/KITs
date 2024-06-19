@@ -48,3 +48,8 @@ label input {
 .completed label {
 	text-decoration: line-through;
 }
+
+footer {
+	position: fixed;
+	bottom: 0;
+}
