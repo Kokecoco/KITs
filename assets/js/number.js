@@ -6,6 +6,16 @@ function convertNumber() {
     ];
     let number = document.getElementById('numberInput').value;
 
+    if (number === 'KITs') {
+        alert("KITsです!");
+        return;
+    }
+
+    if (number === 'moo') {
+        document.getElementById('result').textContent = 'moo!';
+        return;
+    }
+
     if (!/^\d+$/.test(number)) {
         alert("有効な数値を入力してください。半角整数値のみ使用できます。");
         return;
