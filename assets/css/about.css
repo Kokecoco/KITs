@@ -1,39 +1,11 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #3c3c6c;
-}
-
-header {
-    background-color: #3c3c6c;
-    color: #fff;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
+@charset "utf-8";
 
 section {
-    margin: 20px 0;
-    padding: 20px;
-    background-color: #fff;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #ffffff;
 }
 
-
 footer {
-    position: fixed;
-    bottom: 0;
+  position: fixed;
 }
