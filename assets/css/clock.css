@@ -18,3 +18,7 @@ body {
     color: #ffffff;
     text-shadow: #00ffff 0 0 30px;
 }
+
+footer {
+    margin-top: 0;
+}
