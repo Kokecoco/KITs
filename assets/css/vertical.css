@@ -1,12 +1,4 @@
 main {
-    background-color: #fff;
-    border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px #000;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2.5rem;
-    padding: 2rem;
-    width: 100%;
     height: auto;
     max-width: 80vw !important;
 }
@@ -24,10 +16,6 @@ main {
 }
 .ck-reset {
     width: 100%;
-}
-body {
-    font-family: "Roboto", sans-serif;
-    background-color: #efefef;
 }
 .editor-container {
     display: flex;
