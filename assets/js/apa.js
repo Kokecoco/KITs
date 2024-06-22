@@ -23,6 +23,15 @@ function createAPA() {
 }
 
 
+function resetForms() {
+  $author.value = '';
+  $site.value = '';
+  $page.value = '';
+  $url.value = '';
+  $publishYear.value = '';
+  $publishMonth.value = '';
+  $publishDay.value = '';
+}
 
 
 // それぞれ取得
@@ -38,8 +47,8 @@ const $accessMonth = document.getElementById('access-month');
 const $accessDay = document.getElementById('access-day');
 
 
-const $button = document.getElementById('create-button');
-$button.addEventListener('click', createAPA);
+document.getElementById('create-button').addEventListener('click', createAPA);
+document.getElementById('reset-button').addEventListener('click', resetForms);
 
 // 現在の日付を取得
 const today = new Date();
