@@ -3,7 +3,7 @@
 ![image](https://www.kits-tools.net/assets/images/logo.png)
 
 ## 概要
-課題作成などに使える便利なICTツールの提供を行います。
+課題作成などに使える便利なICTツールの提供を行います。\
 [KITs](https://kits-tools.net/)
 
 ## 現在提供しているツール
@@ -17,13 +17,13 @@
 
 ## メンバー紹介(Githubアカウント持っている人のみ)
 ### 会長
-意見まとめ担当。法律に詳しい
+意見まとめ担当。法律に詳しい\
 [Github](https://github.com/Lapis-Lazward)
 #### 担当したページ・ツール
 - KITs利用規約・プライバシーポリシー
 ### 苔コッコー
-プログラマー。ずっと社畜。Chrome反対派
-[Youtube](https://www.youtube.com/@Koke-coco)
+プログラマー。ずっと社畜。Chrome反対派\
+[Youtube](https://www.youtube.com/@Koke-coco)\
 [Github](https://github.com/Kokecoco)
 #### 担当したページ・ツール
 - ホーム
@@ -31,15 +31,16 @@
 - 数字→読み方変換
 - 電卓
 ### れポポ
-プログラマー。初心者Vimmer
-[Youtube(更新してない)](https://www.youtube.com/@repopo)
+プログラマー。初心者Vimmer\
+[Youtube(更新してない)](https://www.youtube.com/@repopo)\
 [Github](https://github.com/YouTuber-repopo)
 #### 担当したページ・ツール
 - APAスタイル作成
 - Todoリスト
 ### Sota
-初心者プログラマー。何もわかんない状態からいきなりWSL Ubuntu, Github, Vimを押し付けられてる
+初心者プログラマー。何もわかんない状態からいきなりWSL Ubuntu, Github, Vimを押し付けられてる\
 [Github](https://github.com/Sota000-1)
+#### 担当したページ・ツール
 - KITsについて
 - 時計
 - グループ分け
