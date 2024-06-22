@@ -1,19 +1,25 @@
 // APAスタイル作成
 function createAPA() {
-    let autherName;
-    let publishDate;
-    let accessDate = `${$accessMonth.value}. ${$accessDay.value}. ${$accessYear.value}`;
-    
-    if ($publishYear.value && $publishMonth.value && $publishDay.value) { publishDate = `${$publishYear.value}, ${$publishMonth.value}, ${$publishDay.value}`; }
-    else if ($publishYear.value && $publishMonth.value) { publishDate = `${$publishYear.value}, ${$publishMonth.value}`; }
-    else if ($publishYear.value) { publishDate = $publishYear.value; }
-    else { publishDate = 'n.d.'; }
+  const $result_textarea = document.getElementById('result');
+  let autherName;
+  let publishDate;
+  let accessDate = `${$accessMonth.value}. ${$accessDay.value}. ${$accessYear.value}`;
 
-    if ($author.value && $site.value) { alert(`${$author.value}(${publishDate}). ${$page.value}. ${$site.value}. Retrieved ${accessDate}. from ${url.value}`); return;}
-    else if ($author.value) { autherName = $author.value; }
-    else if ($site.value) { autherName = $site.value; }
+  if ($publishYear.value && $publishMonth.value && $publishDay.value) { publishDate = `${$publishYear.value}, ${$publishMonth.value}, ${$publishDay.value}`; }
+  else if ($publishYear.value && $publishMonth.value) { publishDate = `${$publishYear.value}, ${$publishMonth.value}`; }
+  else if ($publishYear.value) { publishDate = $publishYear.value; }
+  else { publishDate = 'n.d.'; }
 
-    alert(`${autherName}(${publishDate}). ${$page.value}. Retrieved ${accessDate}. from ${$url.value}`);
+  if ($author.value && $site.value) { printAPAResult(`${$author.value}(${publishDate}). ${$page.value}. ${$site.value}. Retrieved ${accessDate}. from ${url.value}`); return;}
+  else if ($author.value) { autherName = $author.value; }
+  else if ($site.value) { autherName = $site.value; }
+
+  // alert(`${autherName}(${publishDate}). ${$page.value}. Retrieved ${accessDate}. from ${$url.value}`);
+  printAPAResult(`${autherName}(${publishDate}). ${$page.value}. Retrieved ${accessDate}. from ${$url.value}`);
+
+  function printAPAResult(result) {
+    $result_textarea.value += result + '\n';
+  }
 }
 
 
