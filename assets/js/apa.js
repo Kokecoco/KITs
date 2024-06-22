@@ -1,3 +1,10 @@
+// ページ読み込み時にローカルストレージから履歴取得
+window.onload = function () {
+  document.getElementById('result').value = localStorage.getItem('apa-result') || '';
+}
+
+
+
 // APAスタイル作成
 function createAPA() {
   const $result_textarea = document.getElementById('result');
@@ -19,6 +26,7 @@ function createAPA() {
 
   function printAPAResult(result) {
     $result_textarea.value += result + '\n';
+    localStorage.setItem('apa-result', document.getElementById('result').value);
   }
 }
 
