@@ -44,7 +44,8 @@ function calculateResult() {
     try {
         let result = display.value;
         console.log(result);
-        if (result === "(^^)"|| result === "(^^)!" || result === "(^^)/") {
+        eggs = ["(^^)","(^^)/","(*^^*)","(^-^)","(^0^)"];
+        if (eggs.includes(result)) {
             alert("見つかっちゃった(^^)!");
             return;
         }
