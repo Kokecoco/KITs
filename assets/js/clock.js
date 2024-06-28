@@ -36,3 +36,25 @@ function updateClock() {
 
 setInterval(updateClock, 100);
 updateClock();
+
+document.addEventListener('keydown', (function() {
+    const sequence = 'rainbow';
+    let currentIndex = 0;
+
+    return function(event) {
+        const key = event.key.toLowerCase();
+
+        if (key === sequence[currentIndex]) {
+            currentIndex++;
+            if (currentIndex === sequence.length) {
+                // 全てのキーが正しく入力された場合の処理
+                const clock = document.getElementById('clock');
+                clock.classList.toggle('text-gaming');
+                currentIndex = 0; // シーケンスをリセット
+            }
+        } else {
+            currentIndex = 0;
+        }
+    };
+})());
+
