@@ -6,13 +6,9 @@ function convertNumber() {
     ];
     let number = document.getElementById('numberInput').value;
 
-    if (number === 'KITs') {
-        alert("KITsです!");
-        return;
-    }
-
-    if (number === 'moo') {
-        document.getElementById('result').textContent = 'moo!';
+    if (number === 'rainbow' || number === 'gaming') {
+        const num_title = document.getElementById('num-title');
+        num_title.classList.toggle('text-gaming');
         return;
     }
 
