@@ -141,6 +141,11 @@ footer {
   width: 100%;
 }
 
+.fixed {
+  position: fixed;
+  bottom: 0;
+}
+
 .btn-theme {
   --bs-btn-color: #fff;
   --bs-btn-bg: #3c3c6c;
