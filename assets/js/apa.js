@@ -1,22 +1,45 @@
-// APAスタイル作成
-function createAPA() {
-    let autherName;
-    let publishDate;
-    let accessDate = `${$accessMonth.value}. ${$accessDay.value}. ${$accessYear.value}`;
-    
-    if ($publishYear.value && $publishMonth.value && $publishDay.value) { publishDate = `${$publishYear.value}, ${$publishMonth.value}, ${$publishDay.value}`; }
-    else if ($publishYear.value && $publishMonth.value) { publishDate = `${$publishYear.value}, ${$publishMonth.value}`; }
-    else if ($publishYear.value) { publishDate = $publishYear.value; }
-    else { publishDate = 'n.d.'; }
-
-    if ($author.value && $site.value) { alert(`${$author.value}(${publishDate}). ${$page.value}. ${$site.value}. Retrieved ${accessDate}. from ${url.value}`); return;}
-    else if ($author.value) { autherName = $author.value; }
-    else if ($site.value) { autherName = $site.value; }
-
-    alert(`${autherName}(${publishDate}). ${$page.value}. Retrieved ${accessDate}. from ${$url.value}`);
+// ページ読み込み時にローカルストレージから履歴取得
+window.onload = function () {
+  document.getElementById('result').value = localStorage.getItem('apa-result') || '';
 }
 
 
+
+// APAスタイル作成
+function createAPA() {
+  const $result_textarea = document.getElementById('result');
+  let autherName;
+  let publishDate;
+  let accessDate = `${$accessMonth.value}. ${$accessDay.value}. ${$accessYear.value}`;
+
+  if ($publishYear.value && $publishMonth.value && $publishDay.value) { publishDate = `${$publishYear.value}, ${$publishMonth.value}, ${$publishDay.value}`; }
+  else if ($publishYear.value && $publishMonth.value) { publishDate = `${$publishYear.value}, ${$publishMonth.value}`; }
+  else if ($publishYear.value) { publishDate = $publishYear.value; }
+  else { publishDate = 'n.d.'; }
+
+  if ($author.value && $site.value) { printAPAResult(`${$author.value}(${publishDate}). ${$page.value}. ${$site.value}. Retrieved ${accessDate}. from ${url.value}`); return;}
+  else if ($author.value) { autherName = $author.value; }
+  else if ($site.value) { autherName = $site.value; }
+
+  // alert(`${autherName}(${publishDate}). ${$page.value}. Retrieved ${accessDate}. from ${$url.value}`);
+  printAPAResult(`${autherName}(${publishDate}). ${$page.value}. Retrieved ${accessDate}. from ${$url.value}`);
+
+  function printAPAResult(result) {
+    $result_textarea.value += result + '\n';
+    localStorage.setItem('apa-result', document.getElementById('result').value);
+  }
+}
+
+
+function resetForms() {
+  $author.value = '';
+  $site.value = '';
+  $page.value = '';
+  $url.value = '';
+  $publishYear.value = '';
+  $publishMonth.value = '';
+  $publishDay.value = '';
+}
 
 
 // それぞれ取得
@@ -32,8 +55,8 @@ const $accessMonth = document.getElementById('access-month');
 const $accessDay = document.getElementById('access-day');
 
 
-const $button = document.getElementById('create-button');
-$button.addEventListener('click', createAPA);
+document.getElementById('create-button').addEventListener('click', createAPA);
+document.getElementById('reset-button').addEventListener('click', resetForms);
 
 // 現在の日付を取得
 const today = new Date();

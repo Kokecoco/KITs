@@ -72,7 +72,10 @@
       </div>
     </nav>
     <main>
-      <h1 class="title">APAスタイル作成ツール</h1>
+      <div class="title-box">
+	<h1 class="title">APAスタイル作成ツール</h1>
+	<button type="reset" id="reset-button" class="reset button border">フォームをリセット</button>
+      </div>
       <div class="column">
 	<label htmlFor="author" class="default-label">著者名</label>
 	<input type="text" id="author" class="text-input border" required />
@@ -206,6 +209,7 @@
 	</div>
       </div>
       <button id="create-button" class="submit border">作成する</button>
+      <textarea class="text-input border result" id="result"></textarea>
     </main>
     <footer>
       <p>&copy; 2024 Kaisei Information Technologies</p>
