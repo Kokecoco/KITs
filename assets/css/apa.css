@@ -55,3 +55,9 @@
   width: auto;
   background-color: #d351a1;
 }
+
+.bottom-reset {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

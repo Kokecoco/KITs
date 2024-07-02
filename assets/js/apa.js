@@ -7,8 +7,7 @@ window.onload = function () {
 
 // APAスタイル作成
 function createAPA() {
-  const $result_textarea = document.getElementById('result');
-  let autherName;
+  let authorName;
   let publishDate;
   let accessDate = `${$accessMonth.value}. ${$accessDay.value}. ${$accessYear.value}`;
 
@@ -18,11 +17,11 @@ function createAPA() {
   else { publishDate = 'n.d.'; }
 
   if ($author.value && $site.value) { printAPAResult(`${$author.value}(${publishDate}). ${$page.value}. ${$site.value}. Retrieved ${accessDate}. from ${url.value}`); return;}
-  else if ($author.value) { autherName = $author.value; }
-  else if ($site.value) { autherName = $site.value; }
+  else if ($author.value) { authorName = $author.value; }
+  else if ($site.value) { authorName = $site.value; }
 
-  // alert(`${autherName}(${publishDate}). ${$page.value}. Retrieved ${accessDate}. from ${$url.value}`);
-  printAPAResult(`${autherName}(${publishDate}). ${$page.value}. Retrieved ${accessDate}. from ${$url.value}`);
+  // alert(`${authorName}(${publishDate}). ${$page.value}. Retrieved ${accessDate}. from ${$url.value}`);
+  printAPAResult(`${authorName}(${publishDate}). ${$page.value}. Retrieved ${accessDate}. from ${$url.value}`);
 
   function printAPAResult(result) {
     $result_textarea.value += result + '\n';
@@ -53,10 +52,16 @@ const $publishDay = document.getElementById('publish-day');
 const $accessYear = document.getElementById('access-year');
 const $accessMonth = document.getElementById('access-month');
 const $accessDay = document.getElementById('access-day');
+const $result_textarea = document.getElementById('result');
 
 
 document.getElementById('create-button').addEventListener('click', createAPA);
 document.getElementById('reset-button').addEventListener('click', resetForms);
+document.getElementById('textarea-reset-button').addEventListener('click', () => {
+  $result_textarea.value = '';
+  localStorage.setItem('apa-result', '');
+  console.log('reset!');
+});
 
 // 現在の日付を取得
 const today = new Date();
