@@ -57,6 +57,16 @@ function resetForms() {
   setAccessDateDefault();
 }
 
+function copyResult() {
+  $result_textarea.select();
+  document.execCommand('Copy');
+  alert('Copied!');
+}
+
+function resetResult() {
+  $result_textarea.value = '';
+  localStorage.setItem('apa-result', '');
+}
 
 // それぞれ取得
 const $author = document.getElementById('author');
@@ -73,8 +83,6 @@ const $result_textarea = document.getElementById('result');
 
 document.getElementById('create-button').addEventListener('click', createAPA);
 document.getElementById('reset-button').addEventListener('click', resetForms);
-document.getElementById('textarea-reset-button').addEventListener('click', () => {
-  $result_textarea.value = '';
-  localStorage.setItem('apa-result', '');
-});
+document.getElementById('textarea-copy-button').addEventListener('click', copyResult);
+document.getElementById('textarea-reset-button').addEventListener('click', resetResult);
 
