@@ -1,5 +1,42 @@
 @charset "utf-8";
 
+.source-selection {
+  width: 100%;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.source-selection button {
+  width: 10rem;
+  background-color: #ffffff;
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin: 0.5rem;
+}
+
+.source-selection button.selected {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  pointer-events: none;
+}
+
+.reset-button-box {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.reset {
+  width: auto;
+  background-color: #d351a1;
+}
+
+.column {
+  margin-bottom: 1rem;
+}
 
 .default-label {
   margin-bottom: 0.5rem;
@@ -9,8 +46,18 @@
 
 }
 
-.column {
-  margin-bottom: 1rem;
+.detail {
+  border-radius: 0.25rem;
+  border-width: 1px;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.detail-input {
+  width: 15rem;
+  margin: 0.25rem;
 }
 
 .date {
@@ -24,13 +71,7 @@
 }
 
 .date-input {
-  border-radius: 0.25rem;
-  border-width: 1px;
-  width: 30%;
-  padding: 0.5rem;
-  font-family: inherit;
-  line-height: inherit;
-  margin: 0px;
+  width: 10rem;
 }
 
 .date-label {
@@ -46,17 +87,6 @@
   margin-top: 0.5rem;
 }
 
-.title-box {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.reset {
-  width: auto;
-  background-color: #d351a1;
-}
-
 .bottom-buttons {
   width: 100%;
   display: flex;
@@ -66,3 +96,4 @@
 .bottom-buttons button {
   width: 5rem;
 }
+
