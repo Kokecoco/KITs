@@ -57,6 +57,10 @@ main {
   margin: 0px;
 }
 
+.text-input::placeholder {
+  color: #cccccc;
+}
+
 .button {
   padding: 0.5rem;
 
