@@ -16,13 +16,13 @@
         />
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/base.css" />
-    <link rel="stylesheet" href="assets/css/[HTML name].css" />
+    <link rel="stylesheet" href="assets/css/timer.css" />
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous" >
     </script>
-    <title>ホーム - KITs</title>
+    <title>タイマー - KITs</title>
     <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -71,8 +71,23 @@
         </ul>
       </div>
     </nav>
+    <div class="timer-container">
+      <main>
+        <h1>タイマー</h1>
+        <div class="input-container">
+          <input type="number" class="timer-input border" id="minutes" min="0" placeholder="分" value="0">
+          <span>分</span>
+          <input type="number" class="timer-input border" id="seconds" min="0" max="59" placeholder="秒" value="0">
+          <span>秒</span>
+        </div>
+        <button id="start-button" class="button timer-button start-button border">スタート</button>
+        <button id="stop-button" class="button timer-button stop-button border">ストップ</button>
+        <div id="timer-display" class="timer-display">00:00</div>
+      </main>
+    </div>
     <footer>
       <p>&copy; 2024 Kaisei Information Technologies</p>
     </footer>
+    <script src="assets/js/timer.js"></script>
   </body>
 </html>
