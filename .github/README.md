@@ -23,7 +23,7 @@
 - KITs利用規約・プライバシーポリシー
 ### 苔コッコー
 プログラマー。ずっと社畜。Chrome反対派\
-[Youtube](https://www.youtube.com/@Koke-coco)\
+[ブログ](https://blog.kokecoco.me)\
 [Github](https://github.com/Kokecoco)
 #### 担当したページ・ツール
 - ホーム
