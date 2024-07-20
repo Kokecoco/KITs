@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaisei Information Technology</title>
+    <title>スプラッシュアニメーション</title>
     <style>
         body {
             margin: 0;
@@ -13,9 +13,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            transition: opacity 1s;
         }
         .container {
-            position: relative;
+            position: absolute;
             width: 100%;
             height: 100%;
             display: flex;
@@ -52,18 +53,26 @@
         .text.fade-in::before {
             left: 100%;
             transition: left 1s;
-
         }
         .text.fade-out::before {
             left: 100%;
             transition: left 1s;
+        }
+        .main-content {
+            display: none;
+            color: black;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="assets/images/logo.svg" alt="Logo" class="logo" id="logo">
-        <div class="text" id="text">Kaisei Information Technology</div>
+        <div class="text" id="text">Kaisei Information Technologies</div>
+    </div>
+    <div class="main-content" id="main-content">
+        <h1>トップページ乗っかるとこでしょ？</h1>
+        <p>トップページ早く作ってー</p>
     </div>
     <script>
         window.onload = () => {
@@ -81,7 +90,19 @@
                 document.getElementById('logo').style.transform = 'translateY(-100%)';
                 document.getElementById('logo').style.opacity = '0';
             }, 3500);
+
+            setTimeout(() => {
+                document.body.style.opacity = '0';
+            }, 4500);
+
+            setTimeout(() => {
+                document.querySelector('.container').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+                document.body.style.backgroundColor = 'white';
+                document.body.style.opacity = '1';
+            }, 5500);
         };
     </script>
 </body>
 </html>
+
