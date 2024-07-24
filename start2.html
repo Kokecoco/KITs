@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaisei Information Technologies</title>
+    <style>
+        /* ページ全体のスタイルを設定 */
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #3c3c6c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            transition: opacity 1s; /* フェードイン・アウトのトランジション */
+        }
+
+        /* アニメーション部分のスタイルを設定 */
+        .animation-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* 本当のサイトのコンテナのスタイルを設定 */
+        .real-site-container {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #EDEDED;
+            height: 100vh;
+            width: 100vw;
+            overflow-y: auto;
+            opacity: 0; /* 初めは透明にする */
+            transition: opacity 1s; /* フェードイン・アウトのトランジション */
+        }
+
+        /* ロゴとテキストのスタイルを設定 */
+        .text,
+        .logo {
+            color: white;
+            opacity: 0;
+        }
+
+        .logo {
+            width: 300px;
+            height: 300px;
+            transition: transform 0.5s, opacity 0.5s;
+        }
+
+        .text {
+            font-size: 3em;
+            margin-top: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* テキストのアニメーション効果を設定 */
+        .text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #3c3c6c;
+            transition: left 1s;
+        }
+
+        .text.fade-in::before {
+            left: 0;
+        }
+
+        .text.fade-out::before {
+            left: 100%;
+            transition: left 1s;
+        }
+
+        /* 本当のサイトのヘッダーのスタイルを設定 */
+        h1 {
+            color: #FFFFFF;
+            background-color: #333366;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* ボックスコンテナのスタイルを設定 */
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* 各ボックスのスタイルを設定 */
+        .box {
+            background-color: #6B5B95;
+            color: #FFFFFF;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .box h2 {
+            margin-top: 0;
+        }
+
+        /* モバイル向けのスタイルを設定 */
+        @media (max-width: 600px) {
+            .box {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- アニメーション用のコンテナ -->
+    <div class="animation-container" id="animation-container">
+        <img src="assets/images/logo.svg" alt="Logo" class="logo" id="logo">
+        <div class="text" id="text">Kaisei Information Technologies</div>
+    </div>
+    <!-- 本当のサイトのコンテナ -->
+    <div class="real-site-container" id="real-site-container">
+        <h1>KITsへようこそ！</h1>
+        <div class="box-container">
+            <div class="box">
+                <h2>KITsって何？</h2>
+                <p>KITsは、授業などでクロームブックを使う際により便利に、使いやすくするためにできたグループです。</p>
+            </div>
+            <div class="box">
+                <h2>利用規約</h2>
+                <p>利用規約です。利用規約を読んでからサイトを利用するようお願いします。</p>
+            </div>
+            <div class="box">
+                <h2>ツール一覧</h2>
+                <p>KITsが作ったツールの一覧です。ぜひご利用ください！</p>
+            </div>
+            <div class="box">
+                <h2>リンク集</h2>
+                <p>スプレッドシートなどで作成したツールのリンクをまとめています。</p>
+            </div>
+            <div class="box">
+                <h2>開発者ブログ</h2>
+                <p>各ツールの使い方や更新履歴について書いています。</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // ページが読み込まれたときのアニメーション制御
+        window.onload = () => {
+            setTimeout(() => {
+                document.getElementById('text').classList.add('fade-out');
+                document.getElementById('text').style.opacity = '1';
+                document.getElementById('logo').style.transform = 'translateY(0%)';
+                document.getElementById('logo').style.opacity = '1';
+            }, 1000);
+            // 1秒後にテキストをフェードインさせ、ロゴを下に移動させる
+            setTimeout(() => {
+                document.getElementById('text').style.opacity = '1';
+                document.getElementById('logo').style.transform = 'translateY(0%)';
+                document.getElementById('logo').style.opacity = '1';
+            }, 1500);
+
+            setTimeout(() => {
+
+                document.getElementById('text').style.opacity = '1';
+            }, 2000);
+
+            setTimeout(() => {
+                document.getElementById('text').classList.add('fade-out');
+                document.getElementById('logo').style.transform = 'translateY(-200%)';
+                document.getElementById('logo').style.opacity = '1';
+
+
+            }, 3000);
+
+            // 3.5秒後にアニメーション部分を非表示にし、本当のサイトを表示する
+            setTimeout(() => {
+                document.getElementById('logo').style.transform = 'translateY(-200%)';
+                document.getElementById('logo').style.opacity = '1';
+                document.getElementById('animation-container').style.display = 'none';
+                document.getElementById('real-site-container').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('real-site-container').style.opacity = '1';
+                }, 10); // フェードイン開始
+            }, 3500);
+        };
+    </script>
+</body>
+
+</html>
+

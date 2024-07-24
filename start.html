@@ -13,9 +13,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            transition: opacity 1s;
         }
         .container {
-            position: relative;
+            position: absolute;
             width: 100%;
             height: 100%;
             display: flex;
@@ -52,11 +53,15 @@
         .text.fade-in::before {
             left: 100%;
             transition: left 1s;
-
         }
         .text.fade-out::before {
             left: 100%;
             transition: left 1s;
+        }
+        .main-content {
+            display: none;
+            color: black;
+            text-align: center;
         }
     </style>
 </head>
@@ -64,6 +69,10 @@
     <div class="container">
         <img src="assets/images/logo.svg" alt="Logo" class="logo" id="logo">
         <div class="text" id="text">Kaisei Information Technology</div>
+    </div>
+    <div class="main-content" id="main-content">
+        <h1>Welcome to Kaisei Information Technology</h1>
+        <p>This is the main content of the website.</p>
     </div>
     <script>
         window.onload = () => {
@@ -83,9 +92,15 @@
             }, 3500);
 
             setTimeout(() => {
-                // 本当のサイトの表示処理
-                window.location.href = 'https://www.kits-tools.net';
-            }, 4000);
+                document.body.style.opacity = '0';
+            }, 4500);
+
+            setTimeout(() => {
+                document.querySelector('.container').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+                document.body.style.backgroundColor = 'white';
+                document.body.style.opacity = '1';
+            }, 5500);
         };
     </script>
 </body>
