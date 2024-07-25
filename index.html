@@ -50,35 +50,7 @@
     <meta name="theme-color" content="#3c3c6c" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm">
-      <div class="container-fluid">
-        <a class="navbar-brand white" href="index.html">
-          <img src="assets/images/logo.svg" width="32px" />
-        </a>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a
-              class="nav-link active white"
-              aria-current="page"
-              href="index.html"
-              >ホーム</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link white" href="about.html">KITsとは？</a>
-          </li>
-					<li class="nav-item">
-						<a class="nav-link white" href="links.html">リンク集</a>
-					</li>
-          <li class="nav-item">
-            <a class="nav-link white" href="https://blog.kits-tools.net/"
-              >開発者ブログ・使い方など</a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
-
+    <div id="navbar"></div>
     <div class="container">
       <div class="list-grid1-parts">
         <div class="list-parts">
@@ -183,27 +155,13 @@
     <footer>
       <p>&copy; 2024 Kaisei Information Technologies</p>
     </footer>
-    <div class="container">
-        <img src="assets/images/logo.svg" alt="Logo" class="logo" id="logo">
-        <div class="text" id="text">Kaisei Information Technology</div>
-    </div>
     <script>
-        window.onload = () => {
-            setTimeout(() => {
-                document.getElementById('text').classList.add('fade-in');
-                document.getElementById('text').style.opacity = '1';
-                document.getElementById('logo').style.transform = 'translateY(0)';
-                document.getElementById('logo').style.opacity = '1';
-            }, 1000);
-
-            setTimeout(() => {
-                document.getElementById('text').classList.remove('fade-in');
-                document.getElementById('text').classList.add('fade-out');
-                document.getElementById('text').style.opacity = '0';
-                document.getElementById('logo').style.transform = 'translateY(-100%)';
-                document.getElementById('logo').style.opacity = '0';
-            }, 3500);
-        };
+      fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
     </script>
   </body>
 </html>
