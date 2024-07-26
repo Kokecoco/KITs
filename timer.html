@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" style="opacity: 1">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -70,11 +70,11 @@
     </footer>
     <script>
       fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navbar:', error));
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navbar:', error));
     </script>
     <script src="assets/js/timer.js"></script>
   </body>

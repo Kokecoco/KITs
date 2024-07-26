@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -248,12 +248,11 @@
     <script src="assets/js/apa.js"></script>
     <script>
       fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navbar:', error));
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navbar:', error));
     </script>
-
   </body>
 </html>
