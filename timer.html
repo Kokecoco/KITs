@@ -50,27 +50,7 @@
     <meta name="theme-color" content="#3c3c6c" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm">
-      <div class="container-fluid">
-        <a class="navbar-brand white" href="index.html">
-          <img src="assets/images/logo.svg" width="32px">
-        </a>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active white" aria-current="page" href="index.html">ホーム</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link white" href="about.html">KITsとは？</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link white" href="links.html">リンク集</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link white" href="https://blog.kits-tools.net/">開発者ブログ・使い方など</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div id="navbar"></div>
     <div class="timer-container">
       <main>
         <h1>タイマー</h1>
@@ -88,6 +68,14 @@
     <footer>
       <p>&copy; 2024 Kaisei Information Technologies</p>
     </footer>
+    <script>
+      fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
     <script src="assets/js/timer.js"></script>
   </body>
 </html>
