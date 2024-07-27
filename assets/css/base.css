@@ -184,10 +184,14 @@ footer {
   --bs-btn-disabled-border-color: #3c3c6c;
 }
 
-.text-gaming {
-  /* 横長で虹色を作る */
-  color: transparent !important;             /*文字を透明にする*/
-  background-clip: text;        /*背景を文字に適用する*/
+.text-color {
+  color: transparent !important;
+  background-clip: text;
+}
+
+.rainbow {
+  color: transparent !important;
+  background-clip: text !important;
   background-image: linear-gradient(to right, Magenta, yellow, Cyan, Magenta);
   background-size: 200% 100%;  /*背景のサイズを2倍にする*/
   animation: gaming 2s linear infinite;
@@ -197,4 +201,11 @@ footer {
   100% {
     background-position-x: 200%;
   }
+}
+
+.golden {
+  color: transparent !important;
+  background-clip: text !important;
+  background: linear-gradient(45deg, #B67B03 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #B67B03 90% 100%);
+  text-shadow: #FF0 0 0 30px !important;
 }
