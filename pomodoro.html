@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポモドーロ時計</title>
+    <link rel="stylesheet" href="pomodoro.css">
+</head>
+<body>
+    <div class="container">
+        <div class="timer" id="timerDisplay">00:00</div>
+        <div class="status" id="statusDisplay">作業中</div>
+        <div class="controls">
+            <div class="work-settings">
+                <label for="workMinutes">作業</label>
+                <input type="number" id="workMinutes" min="0" step="1" value="0">分
+                <input type="number" id="workSeconds" min="0" step="1" value="0">秒
+            </div>
+            <div class="break-settings">
+                <label for="breakMinutes">休憩</label>
+                <input type="number" id="breakMinutes" min="0" step="1" value="0">分
+                <input type="number" id="breakSeconds" min="0" step="1" value="0">秒
+            </div>
+            <div class="repeat-settings">
+                <label for="repeatCount">繰り返し回数</label>
+                <input type="number" id="repeatCount" min="1" step="1" value="1">
+            </div>
+        </div>
+        <div class="settings-action">
+            <button class="set-button">設定</button>
+            <button id="startBtn">スタート</button>
+            <button id="pauseBtn" class="pause-button">一時停止</button>
+            <button id="resetBtn">リセット</button>
+        </div>
+    </div>
+    <script src="pomodoro.js"></script>
+</body>
+</html>
