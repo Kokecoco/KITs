@@ -1,0 +1,56 @@
+name: Feature Request
+description: 機能追加に関するIssueを作成するためのフォームです。
+title: ":sparkles: feat: [FEATURE NAME]"
+assignees:
+  - Youtuber-repopo
+  - Kokecoco
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Issueの概要
+        やってほしいことを明確に具体的に書いてください。文章でもいいですが、箇条書きだと助かります。
+        例: 
+        - index.htmlを削除
+        - htmlファイルのリファクタリング
+        - Todoリスト作成時にローカルストレージに保存する
+
+  - type: textarea
+    id: feature_description
+    attributes:
+      label: Issueの概要
+      description: やってほしいことを具体的に記述してください。
+      placeholder: ここにIssueの概要を入力してください
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Issueの理由
+        なぜこのIssueを立てたのか、現状の課題点やニーズなどを記入してください。
+        例:
+        - コードに重大な冗長性がある
+        - ○○機能を追加してほしいと要望があった
+
+  - type: textarea
+    id: issue_reason
+    attributes:
+      label: Issueの理由
+      description: このIssueを立てた理由や背景を記述してください。
+      placeholder: ここにIssueの理由を入力してください
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 備考
+        理想やイメージ、起こりうる副作用などを書いてください。特にない場合は「特になし」でOKです。
+        例:
+        - SETBみたいにかっこよくしたい
+        - ローカルストレージが競合する
+        - 数値→読み方変換ツールのレイアウトが崩れる
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: 備考
+      description: 理想や副作用などを記述してください。特になければ「特になし」と記入してください。
+      placeholder: ここに備考を入力してください

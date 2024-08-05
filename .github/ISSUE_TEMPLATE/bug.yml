@@ -1,0 +1,66 @@
+name: Bug Report
+description: バグに関するIssueを報告するためのフォームです。
+title: ":bug: fix: [FEATURE NAME]"
+assignees:
+  - Youtuber-repopo
+  - Kokecoco
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## バグの概要
+        どのようなバグなのかを説明してください。
+        例: 
+        - APAスタイルのスタイルが崩れている
+        - Todoリストが保存されない
+
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: バグの概要
+      description: バグの詳細を記述してください。
+      placeholder: ここにバグの説明を入力してください
+
+  - type: markdown
+    attributes:
+      value: |
+        ## バグの発生条件
+        バグがどのような条件で発生するのか詳細に述べてください。
+        例: 
+        - APAスタイルのページで再読み込みをした際
+        - Todoリストに「れポポは頭悪いぃ！」という文言を追加した際
+
+  - type: textarea
+    id: bug_conditions
+    attributes:
+      label: バグの発生条件
+      description: バグが発生する手順を記述してください。
+      placeholder: ここに発生条件を入力してください
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 解決案
+        思いつく解決案があれば箇条書きで教えてください。なければ「IHNI」で大丈夫です。
+        例: 
+        - Javascriptの変数名の被りをなくす
+
+  - type: textarea
+    id: solution_ideas
+    attributes:
+      label: 解決案
+      description: 考えられる解決策があれば記述してください。
+      placeholder: ここに解決案を入力してください
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 備考
+        参考画像などを貼り付けてください。
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: 備考
+      description: 追加の情報や参考画像のリンクを記載してください。
+      placeholder: ここに備考を入力してください
