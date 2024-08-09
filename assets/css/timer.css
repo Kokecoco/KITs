@@ -6,16 +6,12 @@
   text-align: center;
 }
 
-main {
-  width: 20vw;
-}
-
 .timer-container h1 {
   font-weight: 700;
 }
 
 .input-container {
-  margin: 10px;
+  margin-bottom: 10px;
 }
 
 .timer-input {
@@ -30,16 +26,19 @@ main {
   margin: 0 5px;
   width: 7rem;
   height: 3rem;
+  color: #ffffff;
+}
+
+.add-button {
+  background-color: var(--color-primary);
 }
 
 .start-button {
   background-color: #60d351;
-  color: white;
 }
 
 .stop-button {
   background-color: #d351a1;
-  color: white;
 }
 
 .timer-display {

@@ -54,15 +54,10 @@
     <div class="timer-container">
       <main>
         <h1>タイマー</h1>
-        <div class="input-container">
-          <input type="number" class="timer-input border" id="minutes" min="0" placeholder="分" value="0">
-          <span>分</span>
-          <input type="number" class="timer-input border" id="seconds" min="0" max="59" placeholder="秒" value="0">
-          <span>秒</span>
-        </div>
-        <button id="start-button" class="button timer-button start-button border">スタート</button>
-        <button id="stop-button" class="button timer-button stop-button border">ストップ</button>
-        <div id="timer-display" class="timer-display">00:00</div>
+        <button id="add-button" class="button timer-button add-button border">Add</button>
+        <button id="start-button" class="button timer-button start-button border">Start</button>
+        <button id="stop-button" class="button timer-button stop-button border">Stop</button>
+        <div id="timers"></div>
       </main>
     </div>
     <footer>
