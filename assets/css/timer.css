@@ -1,6 +1,8 @@
-.timer-container {
-  height: 100vh;
+body {
   background-color: var(--color-primary);
+}
+
+.timer-container {
   display: flex;
   align-items: center;
   text-align: center;
@@ -47,5 +49,6 @@
 }
 
 footer {
-  margin-top: 0;
+  position: fixed;
+  bottom: 0;
 }

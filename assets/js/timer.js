@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const $START_BUTTON = document.getElementById('start-button');
   const $STOP_BUTTON = document.getElementById('stop-button');
   const $TIMERS = document.getElementById('timers');
+  const $FOOTER = document.getElementsByTagName('footer')[0];
   
   $ADD_BUTTON.addEventListener('click', addTimer);
   $START_BUTTON.addEventListener('click', startAllTimer);
@@ -25,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="timer-display" id="timer-display-${TIMER_ID}"></div>
     `;
     $TIMERS.appendChild($TIMER);
+    if (document.body.clientHeight >= window.innerHeight) {
+      $FOOTER.style.position = 'static';
+    }
   }
 
   function startAllTimer() { document.querySelectorAll('.timer').forEach(timer => { startTimer(timer.id) }); }
