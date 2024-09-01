@@ -74,7 +74,7 @@ function setAccessDateDefault() {
 
 
 function resetForms() {
-  document.getElementsByName('apa-input-data').map(
+  document.getElementsByName('apa-input-data').forEach(
     elm => elm.value = ''
   );
   setAccessDateDefault();
