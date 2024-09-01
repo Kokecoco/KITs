@@ -18,65 +18,57 @@ js: apa
 </div> 
 <div class="apa-form">
   <div class="column">
-    <label for="author" class="default-label">著者名 <span class="required">*</span></label>
-    <input type="text" id="author" class="text-input border" placeholder="開成太郎" />
+    <label for="author" class="default-label">著者名 <span class="required" id="author-required">*</span></label>
+    <input type="text" id="author" class="text-input border" placeholder="開成太郎" name="apa-input-data" />
   </div>
-  <div class="column" name="form-block">
+  <div class="column" name="form-block" id="site-block">
     <label for="site" class="default-label">ウェブサイト名</label>
-    <input type="text" id="site" class="text-input border" placeholder="KITs" />
+    <input type="text" id="site" class="text-input border" placeholder="KITs" name="apa-input-data" />
   </div>
-  <div class="column" name="form-block">
+  <div class="column" name="form-block" id="publisher-block">
     <label for="publisher-name" class="default-label">出版社 <span class="required">*</span></label>
-    <input type="text" id="publisher-name" class="text-input border" placeholder="開成書店" />
+    <input type="text" id="publisher" class="text-input border" placeholder="開成書店" name="apa-input-data" />
   </div>
-  <div class="column" name="form-block">
+  <div class="column" name="form-block" id="journal-block">
     <label for="journal-name" class="default-label">学術誌名 <span class="required">*</span></label>
-    <input type="text" id="journal-name" class="text-input border" placeholder="THE KAISEI" />
+    <input type="text" id="journal" class="text-input border" placeholder="THE KAISEI" name="apa-input-data" />
   </div>
-  <div class="column" name="form-block">
+  <div class="column" name="form-block" id="page-name-block">
     <label for="page-name" class="default-label">ウェブページ名 <span class="required">*</span></label>
-    <input type="text" id="page-name" class="text-input border" placeholder="APAスタイル作成ツールの使い方" />
+    <input type="text" id="page-name" class="text-input border" placeholder="APAスタイル作成ツールの使い方" name="apa-input-data" />
   </div>
-  <div class="column" name="form-block">
-    <label for="book-title" class="default-label">書籍名 <span class="required">*</span></label>
-    <input type="text" id="book-title" class="text-input border" placeholder="APA IS SO EASY" />
+  <div class="column" name="form-block" id="title-block">
+    <label for="title" class="default-label" id="title-label">書籍名 <span class="required">*</span></label>
+    <input type="text" id="title" class="text-input border" placeholder="APA IS SO EASY" name="apa-input-data" />
   </div>
-  <div class="column" name="form-block">
-    <label for="paper-title" class="default-label">論文タイトル <span class="required">*</span></label>
-    <input type="text" id="paper-title" class="text-input border" placeholder="KITs' great tools" />
-  </div>
-  <div class="column" name="form-block">
-    <label for="detail" class="default-label">詳細情報 <span class="required">*</span></label>
+  <div class="column" name="form-block" id="detail-block">
+    <label for="detail" class="default-label">詳細情報 <span class="required" id="detail-required">*</span></label>
     <ul id="detail" class="detail border">
-      <li name="form-block">
-        <label for="edition" class="default-label">版 <span class="required">*</span></label>
-        <input type="number" id="edition" class="text-input detail-input border" placeholder="3" />
+      <li name="form-block" id="edition-block">
+        <label for="edition" class="default-label">版</label>
+        <input type="number" id="edition" class="text-input detail-input border" placeholder="3" name="apa-input-data" />
       </li>            
-      <li name="form-block">
+      <li name="form-block" id="volume-block">
         <label for="vol" class="default-label">巻 <span class="required">*</span></label>
-        <input type="number" id="vol" class="text-input detail-input border" placeholder="57" />
+        <input type="number" id="volume" class="text-input detail-input border" placeholder="57" name="apa-input-data" />
       </li>            
-      <li name="form-block">
+      <li name="form-block" id="page-count-block">
         <label for="page-number" class="default-label">ページ <span class="required">*</span></label>
-        <input type="text" id="page-number" class="text-input detail-input border" placeholder="5-18" />
+        <input type="text" id="page-count" class="text-input detail-input border" placeholder="5-18" name="apa-input-data" />
       </li>            
     </ul>
   </div>
-  <div class="column" name="form-block">
-    <label for="url" class="default-label">URL <span class="required">*</span></label>
-    <input type="url" id="url" class="text-input border" placeholder="https://kits-tools.net/apa.html" />
-  </div>
-  <div class="column" name="form-block">
-    <label for="doi" class="default-label">DOIまたはURL</label>
-    <input type="url" id="doi" class="text-input border" placeholder="https://doi.org/12.3456/kits/s7-89.1.011" />
+  <div class="column">
+    <label for="url" class="default-label" id="url-label">URL <span class="required" id="url-required">*</span></label>
+    <input type="url" id="url" class="text-input border" placeholder="https://kits-tools.net/apa.html" name="apa-input-data" />
   </div>
   <div class="column">
-    <label for="publish" class="default-label">作成日</label>
+    <label for="publish" class="default-label">作成日 <span class="required" id="publish-required">*</span></label>
     <div id="publish" class="date border">
-      <input type="number" id="publish-year" min="0" max="2038" class="text-input date-input border" />
+      <input type="number" id="publish-year" min="0" max="2038" class="text-input date-input border" name="apa-input-data" />
       <label for="publish-year" class="date-label">年</label>
 
-      <select id="publish-month" class="text-input date-input border">
+      <select id="publish-month" class="text-input date-input border" name="apa-input-data">
         <option value="">不明</option>
         <option value="January">Jan. (1月)</option>
         <option value="February">Feb. (2月)</option>
@@ -92,7 +84,7 @@ js: apa
         <option value="December">Dec. (12月)</option>
       </select>
 
-      <select id="publish-day" class="text-input date-input border">
+      <select id="publish-day" class="text-input date-input border" name="apa-input-data">
         <option value="">不明</option>
         <option value="1">1日</option>
         <option value="2">2日</option>
@@ -128,13 +120,13 @@ js: apa
       </select>
     </div>
   </div>
-  <div class="column" name="form-block">
+  <div class="column" name="form-block" id="access-block">
     <label for="access" class="default-label">アクセス日 <span class="required">*</span></label>
     <div id="access" class="date border">
-      <input type="number" id="access-year" min="0" max="2038" class="text-input date-input border" required />
+      <input type="number" id="access-year" min="0" max="2038" class="text-input date-input border" name="apa-input-data" />
       <label for="access-year" class="date-label">年</label>
 
-      <select id="access-month" class="text-input date-input border" required>
+      <select id="access-month" class="text-input date-input border" name="apa-input-data">
         <option value="">不明</option>
         <option value="January">Jan. (1月)</option>
         <option value="February">Feb. (2月)</option>
@@ -150,7 +142,7 @@ js: apa
         <option value="December">Dec. (12月)</option>
       </select>
 
-      <select id="access-day" class="text-input date-input border" required>
+      <select id="access-day" class="text-input date-input border" name="apa-input-data">
         <option value="">不明</option>
         <option value="1">1日</option>
         <option value="2">2日</option>
@@ -188,7 +180,7 @@ js: apa
   </div>
 </div>
 <button id="create-button" class="submit border">作成する</button>
-<textarea class="text-input border result" id="result"></textarea>
+<div class="text-input border result" id="result" contenteditable="true"></div>
 <div class="bottom-buttons">
   <button id="textarea-copy-button" class="reset button border">コピー</button>
   <button id="textarea-reset-button" class="reset button border">リセット</button>
