@@ -1,0 +1,58 @@
+/* モーダルのスタイル */
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 5px;
+}
+#modal input,
+#modal button {
+  margin: 5px;
+}
+.memo-list {
+  padding: 0.5rem;
+  height: 2.5rem;
+  width: auto;
+  border-radius: 0.25rem;
+  background-color: #3c3c6c;
+  color: #ffffff;
+  font-family: inherit;
+  line-height: inherit;
+  font-size: 100%;
+  box-shadow: none;
+  margin: 5px;
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+.button {
+  padding: 0.5rem;
+  height: 2.5rem;
+  width: auto;
+  border-radius: 0.25rem;
+  background-color: #3c3c6c;
+  color: #ffffff;
+  font-family: inherit;
+  line-height: inherit;
+  font-size: 100%;
+  box-shadow: none;
+}
+.container {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 1);
+  margin-top: 20px;
+}
