@@ -2,6 +2,8 @@
 window.onload = function () {
 	const savedTasks = JSON.parse(localStorage.getItem('tasks')) || []; // ローカルストレージ取得
 	savedTasks.forEach(t => drawTask(t)); // それぞれを描画
+
+  checkHeight();
 }
 
 
@@ -74,8 +76,9 @@ function makeTask() {
 
 		document.getElementById('add-text').value = ''; // 入力欄リセット
 	}
-}
 
+  checkHeight();
+}
 
 
 // タスク削除処理
@@ -84,6 +87,7 @@ function deleteTask(task) {
 	const updatedTasks = savedTasks.filter( t => t.text != task.text ); // 指定のタスクを除いたリスト
 
 	localStorage.setItem('tasks', JSON.stringify(updatedTasks)); // 反映
+  checkHeight();
 }
 
 
@@ -99,4 +103,15 @@ function toggleCompleteTask(task) {
 	localStorage.setItem('tasks', JSON.stringify(savedTasks)); // 反映
 
 	return savedTasks[taskId]; // 切り替え済みタスク返却
+}
+
+
+function checkHeight() {
+  const $footer = document.getElementsByTagName('footer')[0];
+
+  if (document.body.clientHeight >= window.innerHeight) {
+    $footer.style.position = 'static';
+  } else {
+    $footer.style.position = 'fixed';
+  }
 }
