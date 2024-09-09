@@ -157,7 +157,7 @@ function createAPA(needs) {
   // 共通変数
   let publish = getFormatPublish(inputData.publish.year.value, inputData.publish.month.value, inputData.publish.day.value);
   let author = inputData.author.value || inputData.site.value;
-  let begin = `${author}(${publish})`;
+  let begin = `${author} (${publish})`;
   let result;
   let common;
   let url = inputData.url.value;
@@ -171,7 +171,8 @@ function createAPA(needs) {
     case 'web':
       if (!author) { alert('Error: 著者名またはサイト名を入力してください'); return; }
       common = `Retrieved ${inputData.access.month.value}, ${inputData.access.day.value}, ${inputData.access.year.value}, from ${url}`;
-      if (site) result = `${begin}. <i>${pageName}</i>. ${site}. ${common}`;
+      if (site == author) result = `${begin}. <i>${pageName}</i>. ${common}`;
+      else if (site) result = `${begin}. <i>${pageName}</i>. ${site}. ${common}`;
       else result = `${begin}. <i>${pageName}</i>. ${common}`;
       break;
 
