@@ -14,7 +14,7 @@ a.black {
 
 body {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans",
-  "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 15px;
   line-height: 1.5;
   color: #333;
@@ -193,10 +193,13 @@ footer {
   color: transparent !important;
   background-clip: text !important;
   background-image: linear-gradient(to right, Magenta, yellow, Cyan, Magenta);
-  background-size: 200% 100%;  /*背景のサイズを2倍にする*/
+  background-size: 200% 100%;
+  /*背景のサイズを2倍にする*/
   animation: gaming 2s linear infinite;
 }
+
 @keyframes gaming {
+
   /* backgroundを移動させる */
   100% {
     background-position-x: 200%;
@@ -206,6 +209,16 @@ footer {
 .golden {
   color: transparent !important;
   background-clip: text !important;
-  background: linear-gradient(45deg, #B67B03 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #B67B03 90% 100%);
-  text-shadow: #FF0 0 0 30px !important;
+  background: linear-gradient(45deg,
+      #b67b03 0%,
+      #daaf08 45%,
+      #fee9a0 70%,
+      #daaf08 85%,
+      #b67b03 90% 100%);
+  text-shadow: #ff0 0 0 30px !important;
+}
+
+.toast {
+  --bs-toast-bg: rgba(var(--bs-body-bg-rgb), 1);
+  opacity: 1 !important;
 }
