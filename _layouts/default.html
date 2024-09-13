@@ -60,6 +60,20 @@
     {% if page.js %}
     <script src="assets/js/{{ page.js }}.js" defer></script>
     {% endif %}
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-ZEL7FE5N37"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-ZEL7FE5N37");
+    </script>
   </head>
 
   <body>
