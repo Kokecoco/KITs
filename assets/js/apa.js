@@ -280,6 +280,10 @@ async function getDataWithAPI() {
         month: "long",
       }).format(new Date(datas.creationDate));
       inputData.publish.day.value = datas.creationDate.split("-")[2];
+    } else {
+      inputData.publish.year.value = "";
+      inputData.publish.month.value = "";
+      inputData.publish.day.value = "";
     }
   } else {
     alert("有効なURLを入力してください");
