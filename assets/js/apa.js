@@ -279,7 +279,9 @@ async function getDataWithAPI() {
       inputData.publish.month.value = new Intl.DateTimeFormat("en", {
         month: "long",
       }).format(new Date(datas.creationDate));
-      inputData.publish.day.value = datas.creationDate.split("-")[2];
+      inputData.publish.day.value = datas.creationDate
+        .split("-")[2]
+        .replace(new RegExp("^0+"), "");
     } else {
       inputData.publish.year.value = "";
       inputData.publish.month.value = "";
