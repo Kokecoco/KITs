@@ -271,9 +271,9 @@ async function getDataWithAPI() {
       `https://web-info-api.onrender.com/api/get-info?url=${inputData.url.value}`,
     );
     const datas = await res.json();
-    inputData.site.value = datas.title || "取得できませんでした";
-    inputData.pageName.value = datas.subtitle || "取得できませんでした";
-    inputData.author.value = datas.author || "取得できませんでした";
+    inputData.site.value = datas.title || "";
+    inputData.pageName.value = datas.subtitle || "";
+    inputData.author.value = datas.author || "";
     if (datas.creationDate) {
       inputData.publish.year.value = datas.creationDate.split("-")[0];
       inputData.publish.month.value = new Intl.DateTimeFormat("en", {
