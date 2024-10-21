@@ -199,7 +199,6 @@ footer {
 }
 
 @keyframes gaming {
-
   /* backgroundを移動させる */
   100% {
     background-position-x: 200%;
@@ -209,16 +208,110 @@ footer {
 .golden {
   color: transparent !important;
   background-clip: text !important;
-  background: linear-gradient(45deg,
-      #b67b03 0%,
-      #daaf08 45%,
-      #fee9a0 70%,
-      #daaf08 85%,
-      #b67b03 90% 100%);
+  background: linear-gradient(
+    45deg,
+    #b67b03 0%,
+    #daaf08 45%,
+    #fee9a0 70%,
+    #daaf08 85%,
+    #b67b03 90% 100%
+  );
   text-shadow: #ff0 0 0 30px !important;
+}
+
+.silver {
+  color: transparent !important;
+  background-clip: text !important;
+  background: linear-gradient(
+    45deg,
+    #757575 0%,
+    #9e9e9e 45%,
+    #e8e8e8 70%,
+    #9e9e9e 85%,
+    #757575 90% 100%
+  );
+  text-shadow: #fff 0 0 30px !important;
 }
 
 .toast {
   --bs-toast-bg: rgba(var(--bs-body-bg-rgb), 1);
   opacity: 1 !important;
 }
+
+.platinum {
+  color: transparent !important;
+  background-clip: text !important;
+  background: linear-gradient(    45deg,    #e0f7ff 0%,    #d0e7f0 25%,    #bccfd6 50%,    #e6f5ff 75%,    #d0e7f0 100%  );
+  text-shadow: #e0f7ff 0 0 30px !important;
+}
+
+.amethyst {
+  color: transparent !important;
+  background-clip: text !important;
+  background: linear-gradient(
+    45deg,
+    #9b59b6 0%,
+    #8e44ad 25%,
+    #d2b4de 50%,
+    #8e44ad 75%,
+    #9b59b6 100%
+  );
+  text-shadow: #b182c8 0 0 30px !important;
+}
+
+.emerald {
+  color: transparent !important;
+  background-clip: text !important;
+  background: linear-gradient(
+    45deg,
+    #50c878 0%,
+    #46b267 25%,
+    #a0e8af 50%,
+    #46b267 75%,
+    #50c878 100%
+  );
+  text-shadow: #8de6a2 0 0 30px !important;
+}
+
+.ruby {
+  color: transparent !important;
+  background-clip: text !important;
+  background: linear-gradient(
+    45deg,
+    #e0115f 0%,
+    #c20044 25%,
+    #ff6699 50%,
+    #c20044 75%,
+    #e0115f 100%
+  );
+  text-shadow: #ff88aa 0 0 30px !important;
+}
+
+.topaz {
+  color: transparent !important;
+  background-clip: text !important;
+  background: linear-gradient(
+    45deg,
+    #ffc87c 0%,
+    #ffa500 25%,
+    #ffe5b4 50%,
+    #ffa500 75%,
+    #ffc87c 100%
+  );
+  text-shadow: #ffdd99 0 0 30px !important;
+}
+
+.diamond {
+  color: transparent !important;
+  background-clip: text !important;
+  background: linear-gradient(
+    45deg,
+    #b0e0e6 0%,
+    #e6e8fa 25%,
+    #ffffff 50%,
+    #e6e8fa 75%,
+    #b0e0e6 100%
+  );
+  text-shadow: #ccf2ff 0 0 30px !important;
+}
+
