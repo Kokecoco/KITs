@@ -335,3 +335,46 @@ footer {
   );
   text-shadow: #6699cc 0 0 30px !important;
 }
+
+.opal {
+  color: transparent !important;
+  background-clip: text !important;
+  background: linear-gradient(
+    45deg,
+    #ffccff 0%,
+    #add8e6 25%,
+    #90ee90 50%,
+    #fffacd 75%,
+    #ffccff 100%
+  );
+  text-shadow: #e6e6fa 0 0 30px !important;
+}
+
+.peridot {
+  color: transparent !important;
+  background-clip: text !important;
+  background: linear-gradient(
+    45deg,
+    #99ff99 0%,
+    #66ff66 25%,
+    #b2ff66 50%,
+    #66ff66 75%,
+    #99ff99 100%
+  );
+  text-shadow: #ccff99 0 0 30px !important;
+}
+
+.rosegold {
+  color: transparent !important;
+  background-clip: text !important;
+  background: linear-gradient(
+    45deg,
+    #b76e79 0%,
+    #d99394 25%,
+    #f4c2c2 50%,
+    #d99394 75%,
+    #b76e79 100%
+  );
+  text-shadow: #f8c8dc 0 0 30px !important;
+}
+
