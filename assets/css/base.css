@@ -241,7 +241,14 @@ footer {
 .platinum {
   color: transparent !important;
   background-clip: text !important;
-  background: linear-gradient(    45deg,    #e0f7ff 0%,    #d0e7f0 25%,    #bccfd6 50%,    #e6f5ff 75%,    #d0e7f0 100%  );
+  background: linear-gradient(
+    45deg,
+    #e0f7ff 0%,
+    #d0e7f0 25%,
+    #bccfd6 50%,
+    #e6f5ff 75%,
+    #d0e7f0 100%
+  );
   text-shadow: #e0f7ff 0 0 30px !important;
 }
 
@@ -315,3 +322,16 @@ footer {
   text-shadow: #ccf2ff 0 0 30px !important;
 }
 
+.sapphire {
+  color: transparent !important;
+  background-clip: text !important;
+  background: linear-gradient(
+    45deg,
+    #0f52ba 0%,
+    #1034a6 25%,
+    #4682b4 50%,
+    #1034a6 75%,
+    #0f52ba 100%
+  );
+  text-shadow: #6699cc 0 0 30px !important;
+}
