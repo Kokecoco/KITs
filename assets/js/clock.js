@@ -50,6 +50,9 @@ document.addEventListener(
       emerald: "emerald",
       diamond: "diamond",
       sapphire: "sapphire",
+      opal: "opal",
+      peridot: "peridot",
+      rosegold: "rosegold",
     };
     const CLOCK = document.getElementById("clock");
     const currentKeyIndex = {
@@ -63,6 +66,9 @@ document.addEventListener(
       emerald: 0,
       diamond: 0,
       sapphire: 0,
+      opal: 0,
+      peridot: 0,
+      rosegold: 0,
     };
     const DEFAULT_COLOR_STATUS = "normal";
     let colorStatus = DEFAULT_COLOR_STATUS;
