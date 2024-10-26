@@ -3,8 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const confirmationElement = document.getElementById("confirmation");
   let count = 0;
 
+  // ページロード時にlocalStorageからカウント値を取得
+  if (localStorage.getItem("counterValue")) {
+    count = parseInt(localStorage.getItem("counterValue"));
+  }
+
   const updateCounter = () => {
-    counterElement.textContent = count; // 桁数に応じて自動で表示
+    counterElement.textContent = count;
+    localStorage.setItem("counterValue", count); // カウンターの値をlocalStorageに保存
   };
 
   // カウンターをクリックしたときに数値を変更
@@ -82,5 +88,32 @@ document.addEventListener("DOMContentLoaded", () => {
       // ここでは入力フィールドをクリアしない
     }
   });
+
+  // n倍にする処理
+  document.getElementById("multiply").addEventListener("click", () => {
+    const multiplier = parseFloat(document.getElementById("multiplier").value);
+    if (!isNaN(multiplier)) {
+      // multiplierが数値であるか確認
+      count *= multiplier;
+      updateCounter();
+    } else {
+      alert("正しい数値を入力してください。");
+    }
+  });
+
+  // n分の1にする処理
+  document.getElementById("divide").addEventListener("click", () => {
+    const divider = parseFloat(document.getElementById("divider").value);
+    if (!isNaN(divider) && divider !== 0) {
+      // dividerが0でないことを確認
+      count /= divider;
+      updateCounter();
+    } else {
+      alert("0以外の数値を入力してください。");
+    }
+  });
+
+  // 初期表示のカウンターを更新
+  updateCounter();
 });
 
