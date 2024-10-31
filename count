@@ -1,0 +1,34 @@
+---
+layout: container
+title: カウンター
+css: count
+---
+<h1 class="counter" id="counter" contenteditable="true">0</h1>
+        <div class="buttons">
+            <button id="increase1">1回増やす</button>
+            <button id="increase10">10回増やす</button>
+            <button id="increase100">100回増やす</button>
+            <button id="decrease1" class="decrease">1回減らす</button>
+            <button id="decrease10" class="decrease">10回減らす</button>
+            <button id="decrease100" class="decrease">100回減らす</button>
+            <button id="reset">リセット</button>
+        </div>
+        <div class="input-group">
+            <input type="number" id="customIncrease" placeholder="増やす">
+            <button id="increaseCustom">増やす</button>
+            <input type="number" id="customDecrease" placeholder="減らす">
+            <button id="decreaseCustom">減らす</button>
+        </div>
+        <!-- 新しい入力欄とボタンを追加 -->
+        <div class="input-group2">
+            <input type="number" id="multiplier" placeholder="n倍">
+            <button id="multiply">n倍にする</button>
+            <input type="number" id="divider" placeholder="n分の1">
+            <button id="divide">n分の1にする</button>
+        </div>
+    </div>
+    <div id="confirmation" class="confirmation">
+        <p>本当にリセットしますか？</p>
+        <button id="confirmYes">はい</button>
+        <button id="confirmNo">いいえ</button>
+  </div>
