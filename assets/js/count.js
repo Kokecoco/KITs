@@ -1,112 +1,116 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const counterElement = document.getElementById('counter');
-    const confirmationElement = document.getElementById('confirmation');
-    let count = 0;
+let count = 0;
 
-    // ページロード時にlocalStorageからカウント値を取得
-    if (localStorage.getItem('counterValue')) {
-        count = parseInt(localStorage.getItem('counterValue'));
-    }
+const $counter = document.getElementById('counter');
+const $newValue = document.getElementById('newValue');
+const $newValueBox = document.getElementById('newValueBox');
+const $confirmNewValue = document.getElementById('confirmNewValue');
+const $reset = document.getElementById('reset');
+const $resetBox = document.getElementById('resetBox');
+const $resetYes = document.getElementById('resetYes');
+const $resetNo = document.getElementById('resetNo');
 
-    const updateCounter = () => {
-        counterElement.textContent = count;
-        localStorage.setItem('counterValue', count); // カウンターの値をlocalStorageに保存
-    };
+const $increases = document.getElementsByName('increase');
+const $decreases = document.getElementsByName('decrease');
+const $customIncrease = document.getElementById('customIncrease');
+const $customIncreaseValue = document.getElementById('customIncreaseValue');
+const $customDecrease = document.getElementById('customDecrease');
+const $customDecreaseValue = document.getElementById('customDecreaseValue');
+const $multiplier = document.getElementById('multiplier');
+const $multiply = document.getElementById('multiply');
+const $divider = document.getElementById('divider');
+const $divide = document.getElementById('divide');
 
-    // カウンターをクリックしたときに数値を変更
-    counterElement.addEventListener('click', () => {
-        const inputValue = prompt("新しい値を入力してください:", count);
-        const parsedValue = parseInt(inputValue);
-        if (!isNaN(parsedValue)) {
-            count = parsedValue;
-            updateCounter();
-        }
-    });
+window.onload = function (){
+  count = 0;
 
-    document.getElementById('increase1').addEventListener('click', () => {
-        count += 1;
-        updateCounter();
-    });
+  // ページロード時にlocalStorageからカウント値を取得
+  if (localStorage.getItem('counterValue')) {
+      count = parseInt(localStorage.getItem('counterValue'));
+  }
 
-    document.getElementById('increase10').addEventListener('click', () => {
-        count += 10;
-        updateCounter();
-    });
+  // 初期表示のカウンターを更新
+  updateCounter();
+};
 
-    document.getElementById('increase100').addEventListener('click', () => {
-        count += 100;
-        updateCounter();
-    });
+function updateCounter() {
+  $counter.textContent = count;
+  localStorage.setItem('counterValue', count); // カウンターの値をlocalStorageに保存
+};
 
-    document.getElementById('decrease1').addEventListener('click', () => {
-        count -= 1;
-        updateCounter();
-    });
+// カウンターをクリックしたときに数値を変更
+$counter.addEventListener('click', () => {
+  $newValueBox.style.display = 'block';
+});
 
-    document.getElementById('decrease10').addEventListener('click', () => {
-        count -= 10;
-        updateCounter();
-    });
-
-    document.getElementById('decrease100').addEventListener('click', () => {
-        count -= 100;
-        updateCounter();
-    });
-
-    document.getElementById('reset').addEventListener('click', () => {
-        confirmationElement.style.display = 'block'; // 確認ダイアログを表示
-    });
-
-    document.getElementById('confirmYes').addEventListener('click', () => {
-        count = 0; // カウントをリセット
-        updateCounter();
-        confirmationElement.style.display = 'none'; // ダイアログを非表示
-    });
-
-    document.getElementById('confirmNo').addEventListener('click', () => {
-        confirmationElement.style.display = 'none'; // ダイアログを非表示
-    });
-
-    document.getElementById('increaseCustom').addEventListener('click', () => {
-        const customValue = parseInt(document.getElementById('customIncrease').value);
-        if (!isNaN(customValue)) {
-            count += customValue;
-            updateCounter();
-            // ここでは入力フィールドをクリアしない
-        }
-    });
-
-    document.getElementById('decreaseCustom').addEventListener('click', () => {
-        const customValue = parseInt(document.getElementById('customDecrease').value);
-        if (!isNaN(customValue)) {
-            count -= customValue;
-            updateCounter();
-            // ここでは入力フィールドをクリアしない
-        }
-    });
-
-    // n倍にする処理
-    document.getElementById('multiply').addEventListener('click', () => {
-        const multiplier = parseFloat(document.getElementById('multiplier').value);
-        if (!isNaN(multiplier)) {  // multiplierが数値であるか確認
-            count *= multiplier;
-            updateCounter();
-        } else {
-            alert("正しい数値を入力してください。");
-        }
-    });
-
-    // n分の1にする処理
-    document.getElementById('divide').addEventListener('click', () => {
-        const divider = parseFloat(document.getElementById('divider').value);
-        if (!isNaN(divider) && divider !== 0) {  // dividerが0でないことを確認
-            count /= divider;
-            updateCounter();
-        } else {
-            alert("0以外の数値を入力してください。");
-        }
-    });
-
-    // 初期表示のカウンターを更新
+$confirmNewValue.addEventListener('click', () => {
+  let newValue = parseInt($newValue.value);
+  if (!isNaN(newValue)) {
+    count = newValue;
     updateCounter();
+  }
+  $newValueBox.style.display = 'none';
+});
+
+// +10^n
+$increases.forEach((v, k) => {
+  v.addEventListener('click', () => {
+    count += 10 ** k;
+    updateCounter();
+  })
+});
+
+// -10^n
+$decreases.forEach((v, k) => {
+  v.addEventListener('click', () => {
+    count -= 10 ** k;
+    updateCounter();
+  })
+});
+
+$reset.addEventListener('click', () => {
+  $resetBox.style.display = 'block'; // 確認ダイアログを表示
+});
+
+$resetYes.addEventListener('click', () => {
+  count = 0; // カウントをリセット
+  updateCounter();
+  $resetBox.style.display = 'none'; // ダイアログを非表示
+});
+
+$resetNo.addEventListener('click', () => {
+  $resetBox.style.display = 'none'; // ダイアログを非表示
+});
+
+$customIncrease.addEventListener('click', () => {
+  const customValue = parseInt($customIncreaseValue.value);
+  if (!isNaN(customValue)) {
+    count += customValue;
+    updateCounter();
+  }
+});
+
+$customDecrease.addEventListener('click', () => {
+  const customValue = parseInt($customDecreaseValue.value);
+  if (!isNaN(customValue)) {
+    count -= customValue;
+    updateCounter();
+  }
+});
+
+// n倍にする処理
+$multiply.addEventListener('click', () => {
+  const multiplier = parseFloat($multiplier.value);
+  if (!isNaN(multiplier)) { 
+    count *= multiplier;
+    updateCounter();
+  }
+});
+
+// n分の1にする処理
+$divide.addEventListener('click', () => {
+  const divider = parseFloat($divider.value);
+  if (!isNaN(divider) && divider !== 0) {  // ゼロ除算回避
+    count /= divider;
+    updateCounter();
+  }
 });

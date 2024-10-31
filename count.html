@@ -1,35 +1,39 @@
 ---
-layout: container
+layout: main
 title: カウンター
 css: count
 js: count
 ---
 
-<h1 class="counter" id="counter" contenteditable="true">0</h1>
-<div class="kits_buttons">
-  <button id="increase1" class="button">1回増やす</button>
-  <button id="increase10" class="button">10回増やす</button>
-  <button id="increase100" class="button">100回増やす</button>
-  <button id="decrease1" class="decrease button">1回減らす</button>
-  <button id="decrease10" class="decrease button">10回減らす</button>
-  <button id="decrease100" class="decrease button">100回減らす</button>
-  <button id="reset" class="button">リセット</button>
+<p class="counter" id="counter">0</p>
+<div class="templates">
+  <button type="button" name="increase" class="button">1回増やす</button>
+  <button type="button" name="increase" class="button">10回増やす</button>
+  <button type="button" name="increase" class="button">100回増やす</button>
+  <button type="button" name="decrease" class="decrease button">1回減らす</button>
+  <button type="button" name="decrease" class="decrease button">10回減らす</button>
+  <button type="button" name="decrease" class="decrease button">100回減らす</button>
+  <button type="button" id="reset" class="button">リセット</button>
 </div>
-<div class="input-group">
-  <input type="number" id="customIncrease" placeholder="増やす">
-  <button id="increaseCustom">増やす</button>
-  <input type="number" id="customDecrease" placeholder="減らす">
-  <button id="decreaseCustom">減らす</button>
+<div class="customs">
+  <input type="number" id="customIncreaseValue" class="text-input border counter-input" placeholder="増やす">
+  <button type="button" id="customIncrease" class="button">増やす</button>
+  <input type="number" id="customDecreaseValue" class="text-input border counter-input" placeholder="減らす">
+  <button type="button" id="customDecrease" class="button">減らす</button>
 </div>
-<!-- 新しい入力欄とボタンを追加 -->
-<div class="input-group2">
-  <input type="number" id="multiplier" placeholder="n倍">
-  <button id="multiply">n倍にする</button>
-  <input type="number" id="divider" placeholder="n分の1">
-  <button id="divide">n分の1にする</button>
+<div class="customs">
+  <input type="number" id="multiplier" class="text-input border counter-input" placeholder="n倍">
+  <button type="button" id="multiply" class="button">n倍にする</button>
+  <input type="number" id="divider" class="text-input border counter-input" placeholder="n分の1">
+  <button type="button" id="divide" class="button">n分の1にする</button>
 </div>
-<div id="confirmation" class="confirmation">
+<div id="resetBox" class="counter-alert">
   <p>本当にリセットしますか？</p>
-  <button id="confirmYes" class="button">はい</button>
-  <button id="confirmNo" class="button">いいえ</button>
+  <button type="button" id="resetYes" class="button">はい</button>
+  <button type="button" id="resetNo" class="button">いいえ</button>
+</div>
+<div id="newValueBox" class="counter-alert">
+  <p>新しい値を入力してください:</p>
+  <input type="number" id="newValue" class="text-input border counter-input">
+  <button type="button" id="confirmNewValue" class="button">確定</button>
 </div>
