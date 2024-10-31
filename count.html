@@ -15,15 +15,18 @@ js: count
   <button id="decrease100" class="decrease button">100回減らす</button>
   <button id="reset" class="button">リセット</button>
 </div>
-<div class="kits_input-group">
-  <input type="number" id="customIncrease" placeholder="増やす" />
-  <button id="increaseCustom" class="button">増やす</button>
-  <input type="number" id="customDecrease" placeholder="減らす" />
-  <button id="decreaseCustom" class="decrease button">減らす</button>
-  <input type="number" id="multiplier" placeholder="n倍" />
-  <button id="multiply" class="button">n倍にする</button>
-  <input type="number" id="divider" placeholder="n分の1" />
-  <button id="divide" class="decrease button">n分の1にする</button>
+<div class="input-group">
+  <input type="number" id="customIncrease" placeholder="増やす">
+  <button id="increaseCustom">増やす</button>
+  <input type="number" id="customDecrease" placeholder="減らす">
+  <button id="decreaseCustom">減らす</button>
+</div>
+<!-- 新しい入力欄とボタンを追加 -->
+<div class="input-group2">
+  <input type="number" id="multiplier" placeholder="n倍">
+  <button id="multiply">n倍にする</button>
+  <input type="number" id="divider" placeholder="n分の1">
+  <button id="divide">n分の1にする</button>
 </div>
 <div id="confirmation" class="confirmation">
   <p>本当にリセットしますか？</p>
