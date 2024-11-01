@@ -1,0 +1,80 @@
+body {
+    background-color: #efefef;
+    font-family: "Noto Sans JP","Helvetica Neue","Helvetica","Hiragino Sans","Hiragino Kaku Gothic ProN","Arial","Yu Gothic","Meiryo",sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0
+}
+
+nav {
+    background-color: #3c3c6c;
+    padding: 10px;
+    display: flex;
+    align-items: center
+}
+
+nav a {
+    color: #ffffff !important;
+    text-decoration: none
+}
+
+.navbar-brand {
+    margin: 0 10px
+}
+
+#footer {
+    background-color: #3c3c6c;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    margin: 1rem 0 0 0
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+ul li a {
+    color: #333;
+    text-decoration: none
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 20px
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%
+}
+
+article {
+    background-color: #ffffff;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 15px -3px #000;
+    border-radius: 0.5rem
+}
+
+h1 {
+    margin: 1rem
+}
+
+.navbar-nav {
+    flex-direction: row;
+    margin: auto 0;
+    margin-bottom: auto !important
+}
