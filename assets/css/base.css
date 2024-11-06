@@ -123,6 +123,7 @@ nav ul li a {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  min-height: calc(100vh - 134.063px);
 }
 
 .white {
@@ -377,4 +378,3 @@ footer {
   );
   text-shadow: #f8c8dc 0 0 30px !important;
 }
-
