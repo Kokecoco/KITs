@@ -1,0 +1,22 @@
+---
+layout: main
+title: LaTeXエディタ
+css: latex
+js: latex
+---
+
+<h1>LaTeX エディタ</h1>
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<div class="container">
+  <textarea
+    id="editor"
+    placeholder="ここにLaTeXコードを入力してください。"
+  ></textarea>
+  <div id="preview"></div>
+</div>
+<button id="downloadBtn">PDFに書き出し</button>

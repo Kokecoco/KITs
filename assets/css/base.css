@@ -126,6 +126,10 @@ body > .container {
   min-height: calc(100vh - 134.063px);
 }
 
+body > main {
+  min-height: calc(100vh - 173.562531px);
+}
+
 .white {
   color: white !important;
 }
