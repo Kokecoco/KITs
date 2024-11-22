@@ -1,4 +1,5 @@
 const $timers = document.getElementById('timers');
+const $footer = document.getElementsByTagName('footer')[0];
 const audio = new Audio('assets/sounds/alerm.mp3');
 let timers = {};
 
@@ -26,6 +27,8 @@ function addTimer() {
       <div class="timer-display" id="timer-display-${timerId}">00:00</div>
     `;
   $timers.appendChild($timer);
+
+  if (document.body.clientHeight >= window.innerHeight) $footer.style.position = 'static';
 }
 
 
@@ -69,6 +72,8 @@ function deleteTimer(timerId) {
     delete timers[timerId];
   }
   document.getElementById(`timer${timerId}`).remove();
+
+  if (document.body.clientHeight < window.innerHeight) $footer.style.position = 'fixed';
 }
 
 function updateTimer(timerId) {
