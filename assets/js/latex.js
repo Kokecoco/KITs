@@ -1,7 +1,19 @@
+// エディタとプレビュー領域、ボタンの取得
 const editor = document.getElementById("editor");
 const preview = document.getElementById("preview");
-const downloadBtn = document.getElementById("downloadBtn");
+const openCHTMLBtn = document.getElementById("openCHTMLBtn");
 const LOCAL_STORAGE_KEY = "latexEditorContent";
+
+// MathJaxの設定
+MathJax = {
+  tex: {
+    inlineMath: [
+      ["$", "$"],
+      ["\\(", "\\)"],
+    ],
+  },
+  chtml: { scale: 1, matchFontHeight: true },
+};
 
 // ローカルストレージから保存された内容を読み込み
 window.addEventListener("load", () => {
@@ -23,19 +35,67 @@ editor.addEventListener("input", () => {
 function updatePreview() {
   const latexText = editor.value;
   preview.innerHTML = `\\[${latexText}\\]`;
-  MathJax.typesetPromise([preview]);
+  if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+    MathJax.typesetPromise([preview]).catch((err) =>
+      console.error("MathJax Error:", err)
+    );
+  } else {
+    console.error("MathJax is not loaded or typesetPromise is unavailable.");
+  }
 }
 
-// PDFに書き出し
-downloadBtn.addEventListener("click", () => {
-  html2pdf()
-    .set({
-      margin: 1,
-      filename: "latex_output.pdf",
-      image: { type: "jpeg", quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
-    })
-    .from(preview)
-    .save();
+// CHTMLを新しいタブで開くボタンの機能
+openCHTMLBtn.addEventListener("click", async () => {
+  try {
+    // MathJaxの処理を完了させる
+    await MathJax.typesetPromise([preview]);
+    const mathElement = preview.querySelector("mjx-container");
+    if (!mathElement) {
+      console.error("CHTML element not found!");
+      return;
+    }
+    const getAccessibleCSS = () => {
+      const cssRules = [];
+      Array.from(document.styleSheets).forEach((styleSheet) => {
+        try {
+          // `cssRules`が安全に読み取れる場合のみ処理を続行
+          if (styleSheet.cssRules) {
+            Array.from(styleSheet.cssRules).forEach((rule) => {
+              cssRules.push(rule.cssText);
+            });
+          }
+        } catch (e) {
+          console.warn(
+            "Cannot access CSS rules from a stylesheet:",
+            styleSheet.href,
+          );
+        }
+      });
+      return cssRules.join("\n");
+    };
+    const cssText = getAccessibleCSS();
+
+    // CHTMLの外部CSSを含む完全なHTMLを生成
+    const chtml = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MathJax CHTML Output</title>
+        <style>${cssText}</style>
+      </head>
+      <body>
+        ${mathElement.outerHTML}
+      </body>
+      </html>
+    `;
+
+    // データURLを生成し、新しいタブで開く
+    const chtmlBlob = new Blob([chtml], { type: "text/html" });
+    const chtmlURL = URL.createObjectURL(chtmlBlob);
+    window.open(chtmlURL, "_blank");
+  } catch (err) {
+    console.error("Error generating or opening CHTML:", err);
+  }
 });
