@@ -9,9 +9,11 @@ js: latex
 <script
   id="MathJax-script"
   async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
 ></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="assets/js/svg2pdf.umd.min.js"></script>
+
 <div class="container">
   <textarea
     id="editor"
@@ -19,4 +21,4 @@ js: latex
   ></textarea>
   <div id="preview"></div>
 </div>
-<button id="downloadBtn">PDFに書き出し</button>
+<button id="openCHTMLBtn">印刷用に開く</button>
