@@ -16,10 +16,10 @@ js: timer
   type="button"
   id="start-button" 
   class="button timer-button start-button border" 
-  onclick="document.querySelectorAll('.timer').forEach(timer => startTimer(timer.id.substr(5)))">Start</button>
+  onclick="stopAllTimer(); startAllTimer()">Start</button>
 <button 
   type="button" 
   id="stop-button" 
   class="button timer-button stop-button border" 
-  onclick="document.querySelectorAll('.timer').forEach(timer => stopTimer(timer.id.substr(5)))">Stop</button>
+  onclick="stopAllTimer()">Stop</button>
 <div id="timers"></div>

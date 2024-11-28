@@ -3,6 +3,10 @@ const $footer = document.getElementsByTagName('footer')[0];
 const audio = new Audio('assets/sounds/alerm.mp3');
 let timers = {};
 
+const TIMER_ID_OFFSET = 'timer'.length;
+const startAllTimer = () => { document.querySelectorAll('.timer').forEach(timer => startTimer(timer.id.substr(TIMER_ID_OFFSET))) }
+const stopAllTimer = () => { document.querySelectorAll('.timer').forEach(timer => stopTimer(timer.id.substr(TIMER_ID_OFFSET))) }
+
 function addTimer() {
   const timerId = parseInt(Object.keys(timers).pop()) + 1 || 0;
   timers[timerId] = {
