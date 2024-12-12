@@ -53,6 +53,16 @@ document.addEventListener(
       opal: "opal",
       peridot: "peridot",
       rosegold: "rosegold",
+      obsidian: "obsidian",
+      aquamarine: "aquamarine",
+      quartz: "quartz",
+      bismuth: "bismuth",
+      watermelontourmaline: "watermelontourmaline",
+      mystictopaz: "mystictopaz",
+      catseye: "catseye",
+      alexandrite: "alexandrite",
+      amber: "amber",
+      pearl: "pearl",
     };
     const CLOCK = document.getElementById("clock");
     const currentKeyIndex = {
@@ -69,6 +79,16 @@ document.addEventListener(
       opal: 0,
       peridot: 0,
       rosegold: 0,
+      obsidian: 0,
+      aquamarine: 0,
+      quartz: 0,
+      bismuth: 0,
+      watermelontourmaline: 0,
+      mystictopaz: 0,
+      catseye: 0,
+      alexandrite: 0,
+      amber: 0,
+      pearl: 0,
     };
     const DEFAULT_COLOR_STATUS = "normal";
     let colorStatus = DEFAULT_COLOR_STATUS;
