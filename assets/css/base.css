@@ -119,10 +119,15 @@ nav ul li a {
 }
 
 /* ページコンテンツのスタイル */
-.container {
+body > .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  min-height: calc(100vh - 134.063px);
+}
+
+body > main {
+  min-height: calc(100vh - 173.562531px);
 }
 
 .white {
@@ -133,6 +138,10 @@ nav ul li a {
   flex-direction: row;
   margin: auto 0;
   margin-bottom: auto !important;
+}
+
+.nav-link:hover {
+  color: #ddd !important;
 }
 
 footer {
@@ -184,6 +193,23 @@ footer {
   --bs-btn-disabled-border-color: #3c3c6c;
 }
 
+.btn-theme-2 {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #3c3c6c;
+  --bs-btn-border-color: #3c3c6c;
+  --bs-btn-hover-color: #ddd;
+  --bs-btn-hover-bg: #3c3c6c;
+  --bs-btn-hover-border-color: #3c3c6c;
+  --bs-btn-focus-shadow-rgb: none;
+  --bs-btn-active-color: #ddd;
+  --bs-btn-active-bg: #3c3c6c;
+  --bs-btn-active-border-color: #3c3c6c;
+  --bs-btn-active-shadow: none;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #3c3c6c;
+  --bs-btn-disabled-border-color: #3c3c6c;
+}
+
 .text-color {
   color: transparent !important;
   background-clip: text;
@@ -217,6 +243,20 @@ footer {
     #b67b03 90% 100%
   );
   text-shadow: #ff0 0 0 30px !important;
+}
+
+.silver {
+  color: transparent !important;
+  background-clip: text !important;
+  background: linear-gradient(
+    45deg,
+    #757575 0%,
+    #9e9e9e 45%,
+    #e8e8e8 70%,
+    #9e9e9e 85%,
+    #757575 90% 100%
+  );
+  text-shadow: #fff 0 0 30px !important;
 }
 
 .toast {
