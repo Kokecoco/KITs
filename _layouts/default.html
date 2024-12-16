@@ -105,6 +105,14 @@
         </ul>
       </div>
     </nav>
+    <div id="terms-banner">
+      <span>
+        このサイトを利用する前に、<a href="terms.html" target="_blank"
+          >利用規約・プライバシーポリシー</a
+        >をお読みください。 続行するには「同意する」をクリックしてください。
+      </span>
+      <button id="accept-terms">同意する</button>
+    </div>
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
       <div
         class="toast"
@@ -144,6 +152,21 @@
     </div>
 
     <script>
+      document
+        .getElementById("accept-terms")
+        .addEventListener("click", function () {
+          // ユーザーの同意をローカルストレージに保存
+          localStorage.setItem("termsAccepted", "true");
+          // バナーを非表示にする
+          document.getElementById("terms-banner").style.display = "none";
+        });
+
+      // ページ読み込み時に同意済みか確認
+      window.addEventListener("load", function () {
+        if (localStorage.getItem("termsAccepted") !== "true") {
+          document.getElementById("terms-banner").style.display = "flex";
+        }
+      });
       // ローカルストレージを確認
       if (!localStorage.getItem("surveyAnswered2")) {
         var toastEl = document.getElementById("liveToast");
