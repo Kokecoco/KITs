@@ -553,40 +553,56 @@ footer {
   text-shadow: #ffffff 0 0 20px !important;
 }
 
-/* バナー全体のスタイル */
-#terms-banner {
+/* ポップアップ全体のスタイル */
+#terms-popup {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  background-color: #fff;
-  color: #333;
-  padding: 15px;
-  justify-content: space-between;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
   align-items: center;
   z-index: 9999;
-  font-size: 14px;
-  display: none;
-  height: 10vh;
 }
 
-#terms-banner a {
-  color: #3c3c6c;
-  text-decoration: underline;
+/* ポップアップボックスのスタイル */
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 650px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#terms-banner button {
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.popup-content p {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.popup-content button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-content button.accept {
   background-color: #3c3c6c;
   color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 5px;
+  transition: color 0.15s ease-in-out;
 }
 
-#terms-banner button:hover {
-  background-color: #2e3056;
+.popup-content button.accept:hover {
+  color: #ddd;
 }
 
 .dropdown-menu-theme {

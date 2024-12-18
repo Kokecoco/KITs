@@ -147,13 +147,17 @@
         </ul>
       </div>
     </nav>
-    <div id="terms-banner">
-      <span>
-        このサイトを利用する前に、<a href="terms.html" target="_blank"
-          >利用規約・プライバシーポリシー</a
-        >をお読みください。 続行するには「同意する」をクリックしてください。
-      </span>
-      <button id="accept-terms">同意する</button>
+    <div id="terms-popup">
+      <div class="popup-content">
+        <h2>利用規約に同意してください</h2>
+        <p>
+          このサイトを利用する前に、<a href="terms.html" target="_blank"
+            >利用規約・プライバシーポリシー</a
+          >をお読みください。
+          <br />続行するには<wbr />「同意する」<wbr />をクリックしてください。
+        </p>
+        <button class="accept">同意する</button>
+      </div>
     </div>
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
       <div
@@ -195,21 +199,20 @@
 
     <script>
       document
-        .getElementById("accept-terms")
+        .querySelector(".popup-content .accept")
         .addEventListener("click", function () {
-          // ユーザーの同意をローカルストレージに保存
+          // ユーザーの同意をCookieまたはローカルストレージに保存
           localStorage.setItem("termsAccepted", "true");
-          // バナーを非表示にする
-          document.getElementById("terms-banner").style.display = "none";
+          // ポップアップを非表示にする
+          document.getElementById("terms-popup").style.display = "none";
         });
 
       // ページ読み込み時に同意済みか確認
       window.addEventListener("load", function () {
         if (localStorage.getItem("termsAccepted") !== "true") {
-          document.getElementById("terms-banner").style.display = "flex";
+          document.getElementById("terms-popup").style.display = "flex";
         }
-      });
-      // ローカルストレージを確認
+      }); // ローカルストレージを確認
       if (!localStorage.getItem("surveyAnswered3")) {
         var toastEl = document.getElementById("liveToast");
         var toast = new bootstrap.Toast(toastEl, { autohide: false });
