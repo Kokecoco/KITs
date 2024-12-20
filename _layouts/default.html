@@ -57,9 +57,6 @@
     />
     <meta name="msapplication-TileColor" content="#3c3c6c" />
     <meta name="theme-color" content="#3c3c6c" />
-    {% if page.js %}
-    <script src="assets/js/{{ page.js }}.js" defer></script>
-    {% endif %}
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -196,7 +193,7 @@
         </div>
       </div>
     </div>
-
+    {% if page.no_popup != true %}
     <script>
       document
         .querySelector(".popup-content .accept")
@@ -213,6 +210,9 @@
           document.getElementById("terms-popup").style.display = "flex";
         }
       }); // ローカルストレージを確認
+    </script>
+    {% endif %}
+    <script>
       if (!localStorage.getItem("surveyAnswered3")) {
         var toastEl = document.getElementById("liveToast");
         var toast = new bootstrap.Toast(toastEl, { autohide: false });
@@ -233,5 +233,8 @@
     <footer>
       <p>&copy; 2024 Kaisei Information Technology for support</p>
     </footer>
+    {% if page.js %}
+    <script src="assets/js/{{ page.js }}.js" defer></script>
+    {% endif %}
   </body>
 </html>
