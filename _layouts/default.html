@@ -57,9 +57,6 @@
     />
     <meta name="msapplication-TileColor" content="#3c3c6c" />
     <meta name="theme-color" content="#3c3c6c" />
-    {% if page.js %}
-    <script src="assets/js/{{ page.js }}.js" defer></script>
-    {% endif %}
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -147,6 +144,18 @@
         </ul>
       </div>
     </nav>
+    <div id="terms-popup">
+      <div class="popup-content">
+        <h2>利用規約に同意してください</h2>
+        <p>
+          このサイトを利用する前に、<a href="terms.html" target="_blank"
+            >利用規約・プライバシーポリシー</a
+          >をお読みください。
+          <br />続行するには<wbr />「同意する」<wbr />をクリックしてください。
+        </p>
+        <button class="accept">同意する</button>
+      </div>
+    </div>
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
       <div
         class="toast"
@@ -184,9 +193,26 @@
         </div>
       </div>
     </div>
-
+    {% if page.no_popup != true %}
     <script>
-      // ローカルストレージを確認
+      document
+        .querySelector(".popup-content .accept")
+        .addEventListener("click", function () {
+          // ユーザーの同意をCookieまたはローカルストレージに保存
+          localStorage.setItem("termsAccepted", "true");
+          // ポップアップを非表示にする
+          document.getElementById("terms-popup").style.display = "none";
+        });
+
+      // ページ読み込み時に同意済みか確認
+      window.addEventListener("load", function () {
+        if (localStorage.getItem("termsAccepted") !== "true") {
+          document.getElementById("terms-popup").style.display = "flex";
+        }
+      }); // ローカルストレージを確認
+    </script>
+    {% endif %}
+    <script>
       if (!localStorage.getItem("surveyAnswered3")) {
         var toastEl = document.getElementById("liveToast");
         var toast = new bootstrap.Toast(toastEl, { autohide: false });
@@ -207,5 +233,8 @@
     <footer>
       <p>&copy; 2024 Kaisei Information Technology for support</p>
     </footer>
+    {% if page.js %}
+    <script src="assets/js/{{ page.js }}.js" defer></script>
+    {% endif %}
   </body>
 </html>
